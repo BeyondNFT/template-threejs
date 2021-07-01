@@ -3,14 +3,12 @@
  * You should also be able to do calls to API etc...
  */
 function preload() {
-	const params =  new URLSearchParams(window.location.search);
-
 	// current owner (if known, else default to 0x0)
-	const owner = params.get('owner') || '0x0000000000000000000000000000000000000000';
+	const owner = beyondHelpers.get('owner', '0x0000000000000000000000000000000000000000');
 	// viewer parameter (only if we know about it, else empty so we default to OxO)
-	const viewer = params.get('viewer') || '0x0000000000000000000000000000000000000000';
+	const viewer = beyondHelpers.get('viewer', '0x0000000000000000000000000000000000000000');
 	// tokenURI
-	const tokenURI = params.get('tokenURI') || './__metadata.json';
+	const tokenURI = beyondHelpers.get('tokenURI', './__metadata.json');
 
 	// locally metadata does not exist, you can set a default here if you need it
 	let creator = '0x0000000000000000000000000000000000000000';
